@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: 'mysql:8.0'
+    environment:
+      - 'MYSQL_DATABASE=walletdb'      # Matches your application properties
+      - 'MYSQL_ROOT_PASSWORD=sql@123'  # Matches your application properties
+    ports:
+      - '3306:3306'
+    deploy:
+      resources:
+        limits:
+          memory: 350m                 # Caps MySQL at 350MB RAM for your 8GB laptop
+
+  rabbitmq:
+    image: 'rabbitmq:3-management-alpine'
+    environment:
+      - 'RABBITMQ_DEFAULT_PASS=secret'
+      - 'RABBITMQ_DEFAULT_USER=myuser'
+    ports:
+      - '5672:5672'
+      - '15672:15672'
+    deploy:
+      resources:
+        limits:
+          memory: 300m                 # Caps RabbitMQ at 300MB RAM
+
+  redis:
+    image: 'redis:alpine'
+    ports:
+      - '6379:6379'
+    deploy:
+      resources:
+        limits:
+          memory: 100m                 # Caps Redis at 100MB RAM
