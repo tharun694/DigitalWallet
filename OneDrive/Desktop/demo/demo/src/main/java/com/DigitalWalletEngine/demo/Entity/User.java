@@ -1,4 +1,4 @@
-package com.DigitalWalletEngine.demo;
+package com.DigitalWalletEngine.demo.Entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Users {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
    Long id;

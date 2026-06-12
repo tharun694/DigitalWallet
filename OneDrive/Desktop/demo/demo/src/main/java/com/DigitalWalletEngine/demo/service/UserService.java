@@ -1,8 +1,7 @@
 package com.DigitalWalletEngine.demo.service;
 
 import com.DigitalWalletEngine.demo.UserRepo;
-import com.DigitalWalletEngine.demo.Users;
-import com.DigitalWalletEngine.demo.controller.UserController;
+import com.DigitalWalletEngine.demo.Entity.User;
 import org.springframework.stereotype.Service;
 
 
@@ -14,10 +13,11 @@ public class UserService {
         this.repo=repo;
     }
 
-    public Users getuser(Long user_id) {
+    public User getuser(Long user_id) {
        return repo.findById(user_id).orElseThrow(()->new RuntimeException("user not found"));
     }
-    public void adduser(Users user) {
+    public User adduser(User user) {
         repo.save(user);
+        return user;
     }
 }
