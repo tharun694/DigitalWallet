@@ -37,8 +37,10 @@ TransService(TransRepo rep, UserRepo repo,RabbitTemplate template){
             sender.setDepositAmount(l);
             reciver.setDepositAmount(transactionAmount);
             transaction.setDateTime(LocalDateTime.now());
-            template.convertAndSend("audit.response",
-                    "Transaction Success");
+            template.convertAndSend(
+                    "audit.queue",
+                    "User " + sender.getId()
+                            + " sent " + transaction.getAmount());
         }else{
             new RuntimeException("Invalid Transaction");
         }
