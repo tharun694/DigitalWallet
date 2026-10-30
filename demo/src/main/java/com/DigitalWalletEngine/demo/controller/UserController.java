@@ -5,7 +5,7 @@ import com.DigitalWalletEngine.demo.service.UserService;
 import org.hibernate.dialect.LobMergeStrategy;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-@CrossOrigin( origins = "http://localhost:5173/")
+@CrossOrigin( origins = "https://digital-wallet-ui-six.vercel.app/")
 @RestController
 @RequestMapping
 public class UserController {

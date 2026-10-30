@@ -4,7 +4,7 @@ import com.DigitalWalletEngine.demo.Entity.Transaction;
 import com.DigitalWalletEngine.demo.Entity.User;
 import com.DigitalWalletEngine.demo.service.TransService;
 import org.springframework.web.bind.annotation.*;
-@CrossOrigin( origins = "http://localhost:5173/")
+@CrossOrigin( origins = "https://digital-wallet-ui-six.vercel.app/")
 @RestController
 @RequestMapping
 public class TransController {
