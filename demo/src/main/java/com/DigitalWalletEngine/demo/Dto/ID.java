@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:5173/")
+@CrossOrigin(origins = "https://digital-wallet-ui-six.vercel.app/")
 public class ID {
     UserService service;
     public ID(UserService service){
